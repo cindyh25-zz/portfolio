@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import {
   darkGreen,
   lightGreen,
-  lightGreenRGBA,
   mediumGray,
+  backgroundGreen,
 } from './colors';
 import { Container } from 'react-bootstrap';
 
 export const pageStyles = {
-  backgroundColor: '#FAFAFA',
+  backgroundColor: backgroundGreen,
   fontFamily: 'Libre Franklin, sans-serif',
   minHeight: '100vh',
 };
@@ -28,26 +28,23 @@ export const ButtonWrapper = styled.div`
 `;
 
 export const NavLinkWrapper = styled.span`
+  box-sizing: border-box;
+  margin: 0 0.5em;
+  font-size: 12px;
+
   & .active-link {
     color: ${darkGreen};
-    font-weight: bold;
-    background: linear-gradient(
-      175deg,
-      ${lightGreenRGBA} 20%,
-      ${lightGreen} 20.01%,
-      ${lightGreen} 76%,
-      ${lightGreenRGBA} 76.01%
-    );
-    padding: 0 4px;
+    padding: 4px 8px;
+    border: 1px solid ${darkGreen};
+    border-radius: 50%;
     text-decoration: none;
-    margin: 0 0.5rem;
+    margin: 0;
   }
   & .inactive-link {
-    display: inline-block;
     color: initial;
-    padding: 0 4px;
+    padding: 4px 8px;
     text-decoration: none;
-    margin: 0 0.5rem;
+    margin: 0;
 
     &:hover {
       color: ${darkGreen};
@@ -57,13 +54,15 @@ export const NavLinkWrapper = styled.span`
 
 export const PageContainer = styled(Container)`
   width: 80%;
-  max-width: 1300px;
+  max-width: 1100px !important;
   min-height: 75vh;
 `;
 
 export const SectionHeader = styled.h3`
-  font-size: 2rem;
-  font-weight: bold;
+  font-family: 'Spectral, serif';
+  font-style: italic;
+  font-size: 3rem;
+  font-weight: normal;
   margin-bottom: 2rem;
 `;
 
@@ -72,7 +71,7 @@ export const MyLink = styled.a`
   text-decoration-color: ${(props) => props.color || darkGreen};
   color: inherit;
   text-underline-offset: 2px;
-
+  font-weight: ${(props) => (props.bolded ? 'bold' : 'normal')};
   &:hover {
     color: ${(props) => props.color || darkGreen};
   }

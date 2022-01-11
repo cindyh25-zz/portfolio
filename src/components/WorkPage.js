@@ -42,8 +42,10 @@ const projects = [
     imgSrc: PearImg,
     description:
       'I was a founding designer creating a community building app for Cornell students. We’ve worked through setbacks and a successful soft launch to bring Pear to life for all students this fall.',
-    isPrimaryCTA: false,
-    ctaText: 'Check it out in Fall 2021',
+    isPrimaryCTA: true,
+    ctaText: 'Check it out',
+    ctaHref:
+      'https://apps.apple.com/us/app/pear-make-friends-at-cornell/id1543010004',
     role: 'Designer',
   },
 ];

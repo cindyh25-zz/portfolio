@@ -15,6 +15,7 @@ const Head = ({ page }) => {
         rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Libre+Franklin"
       ></link>
+
       <MyNav activePage={page} />
     </>
   );
